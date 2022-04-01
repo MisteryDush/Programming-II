@@ -9,17 +9,16 @@ Q - Quit"""
 print(MENU)
 choice = input(">>> ").upper()
 while choice != "Q":
-    match choice:
-        case "C":
-            celsius = float(input("Celsius: "))
-            fahrenheit = celsius * 9.0 / 5 + 32
-            print("Result: {:.2f} F".format(fahrenheit))
-        case "F":
-            fahrenheit = float(input("Fahrenheit: "))
-            celsius = 5 / 9 * (fahrenheit - 32)
-            print(f"Result: {round(celsius, 2)} C")
-        case _:
-            print("Invalid option")
+    if choice == "C":
+        celsius = float(input("Celsius: "))
+        fahrenheit = celsius * 9.0 / 5 + 32
+        print("Result: {:.2f} F".format(fahrenheit))
+    elif choice == "F":
+        fahrenheit = float(input("Fahrenheit: "))
+        celsius = 5 / 9 * (fahrenheit - 32)
+        print(f"Result: {round(celsius, 2)} C")
+    else:
+        print("Invalid option")
     print(MENU)
     choice = input(">>> ").upper()
 print("Thank you.")
